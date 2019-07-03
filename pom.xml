@@ -330,7 +330,7 @@
                 <version>3.1.0</version>
                 <configuration>
                     <linksource>true</linksource>
-                    <source>8</source>
+                    <source>12</source>
                 </configuration>
             </plugin>
 
