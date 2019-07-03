@@ -2,7 +2,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.dev9</groupId>
+    <groupId>com.wiverson</groupId>
     <artifactId>maven-site-docs-example</artifactId>
 
     <!-- Please use standard version numbering! http://mojo.codehaus.org/versions-maven-plugin/version-rules.html -->
@@ -12,22 +12,22 @@
     <description>Demonstrates the use of various Maven site documentation systems.</description>
 
     <!-- Required by the site command for certain relative URL configuration. -->
-    <url>http://www.dev9.com/</url>
+    <url>http://www.wiverson.com/</url>
 
     <!-- Used by the javadoc plugin to generate the comments at the bottom. -->
     <inceptionYear>2013</inceptionYear>
 
     <!-- Check here for your SCM http://maven.apache.org/scm/scms-overview.html -->
     <scm>
-        <connection>scm:git:https://github.com/dev9com/maven-site-docs-example.git</connection>
-        <developerConnection>scm:git:https://github.com/dev9com/maven-site-docs-example.git</developerConnection>
-        <url>scm:git:https://github.com/dev9com/maven-site-docs-example.git</url>
+        <connection>scm:git:https://github.com/wiverson/maven-site-docs-example.git</connection>
+        <developerConnection>scm:git:https://github.com/wiverson/maven-site-docs-example.git</developerConnection>
+        <url>scm:git:https://github.com/wiverson/maven-site-docs-example.git</url>
     </scm>
 
     <!-- Used to define a minimum Maven version. Used in conjunction with plugin
         management to lock in a more current version of the various plugins. -->
     <prerequisites>
-        <maven>3.1.0</maven>
+        <maven>3.6.1</maven>
     </prerequisites>
 
     <!-- Generates the license info for the site report. -->
@@ -45,9 +45,7 @@
             should probably be UTF-8 nowadays. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Added to show how the dependency/property report will look at properties -->
-        <junit.version>4.12</junit.version>
-        <javaLanguage.version>1.8</javaLanguage.version>
-        <jacoco.version>0.7.8</jacoco.version>
+        <javaLanguage.version>1.12</javaLanguage.version>
     </properties>
 
     <!-- These section is used by the maven-changes-plugin as well as to generate
@@ -55,12 +53,12 @@
         http://maven.apache.org/plugins/maven-changes-plugin/usage.html -->
     <issueManagement>
         <system>GitHub</system>
-        <url>https://github.com/dev9com/maven-site-docs-example/issues/</url>
+        <url>https://github.com/wiverson/maven-site-docs-example/issues/</url>
     </issueManagement>
 
     <organization>
-        <name>Dev9</name>
-        <url>http://www.dev9.com/</url>
+        <name>Will Iverson</name>
+        <url>http://www.wiverson.com/</url>
     </organization>
 
     <!-- These are used in conjunction with the SCM configuration for the change
@@ -74,7 +72,7 @@
         <developer>
             <id>will-iverson</id>
             <name>William Iverson</name>
-            <email>will.iverson@dev9.com</email>
+            <email>wiverson AT gmail DOT com</email>
         </developer>
     </developers>
 
@@ -88,17 +86,17 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.6</version>
+                    <version>3.7.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>2.19.1</version>
+                    <version>3.0.0-M3</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>3.1.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -108,7 +106,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -118,32 +116,32 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>2.9</version>
+                    <version>3.0.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-clean-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.0.2</version>
+                    <version>3.1.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-deploy-plugin</artifactId>
-                    <version>2.8.2</version>
+                    <version>3.0.0-M1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-install-plugin</artifactId>
-                    <version>2.5.2</version>
+                    <version>3.0.0-M1</version>
                 </plugin>
             </plugins>
         </pluginManagement>
@@ -152,55 +150,54 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.6.1</version>
+                <version>3.8.1</version>
                 <configuration>
-                    <source>${javaLanguage.version}</source>
-                    <target>${javaLanguage.version}</target>
+                    <release>12</release>
                 </configuration>
             </plugin>
 
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <!-- As of 8/5/2015 updating to 0.7.5.x broke the build -->
-                <version>${jacoco.version}</version>
+            <!--<plugin>-->
+            <!--<groupId>org.jacoco</groupId>-->
+            <!--<artifactId>jacoco-maven-plugin</artifactId>-->
+            <!--&lt;!&ndash; As of 8/5/2015 updating to 0.7.5.x broke the build &ndash;&gt;-->
+            <!--<version>${jacoco.version}</version>-->
 
-                <executions>
-                    <execution>
-                        <id>prepare-agent</id>
-                        <goals>
-                            <goal>prepare-agent</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>report</id>
-                        <phase>prepare-package</phase>
-                        <goals>
-                            <goal>report</goal>
-                        </goals>
-                    </execution>
-                    <execution>
-                        <id>check</id>
-                        <goals>
-                            <goal>check</goal>
-                        </goals>
-                        <configuration>
-                            <rules>
-                                <rule>
-                                    <element>BUNDLE</element>
-                                    <limits>
-                                        <limit>
-                                            <counter>COMPLEXITY</counter>
-                                            <value>COVEREDRATIO</value>
-                                            <minimum>0.60</minimum>
-                                        </limit>
-                                    </limits>
-                                </rule>
-                            </rules>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
+            <!--<executions>-->
+            <!--<execution>-->
+            <!--<id>prepare-agent</id>-->
+            <!--<goals>-->
+            <!--<goal>prepare-agent</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--<execution>-->
+            <!--<id>report</id>-->
+            <!--<phase>prepare-package</phase>-->
+            <!--<goals>-->
+            <!--<goal>report</goal>-->
+            <!--</goals>-->
+            <!--</execution>-->
+            <!--<execution>-->
+            <!--<id>check</id>-->
+            <!--<goals>-->
+            <!--<goal>check</goal>-->
+            <!--</goals>-->
+            <!--<configuration>-->
+            <!--<rules>-->
+            <!--<rule>-->
+            <!--<element>BUNDLE</element>-->
+            <!--<limits>-->
+            <!--<limit>-->
+            <!--<counter>COMPLEXITY</counter>-->
+            <!--<value>COVEREDRATIO</value>-->
+            <!--<minimum>0.60</minimum>-->
+            <!--</limit>-->
+            <!--</limits>-->
+            <!--</rule>-->
+            <!--</rules>-->
+            <!--</configuration>-->
+            <!--</execution>-->
+            <!--</executions>-->
+            <!--</plugin>-->
 
             <!-- It may be strange to configure this plugin in build, but that's where
                 the dependency config goes. This configuration adds markdown support to the
@@ -223,6 +220,11 @@
             </plugin>
 
             <plugin>
+                <artifactId>maven-failsafe-plugin</artifactId>
+                <version>2.22.2</version>
+            </plugin>
+
+            <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
                 <version>3.7</version>
@@ -231,28 +233,8 @@
             <!-- Configure mutation testing. -->
             <plugin>
                 <groupId>org.pitest</groupId>
-                <artifactId>pitest-maven</artifactId>
-                <version>1.1.11</version>
-                <configuration>
-                    <targetClasses>
-                        <param>com.dev9*</param>
-                    </targetClasses>
-                    <targetTests>
-                        <param>com.dev9*</param>
-                    </targetTests>
-                    <reportsDirectory>${project.build.directory}/site/mutation-testing</reportsDirectory>
-                    <threads>4</threads>
-                    <timestampedReports>false</timestampedReports>
-                </configuration>
-                <executions>
-                    <execution>
-                        <id>mutation-testing</id>
-                        <phase>site</phase>
-                        <goals>
-                            <goal>mutationCoverage</goal>
-                        </goals>
-                    </execution>
-                </executions>
+                <artifactId>pitest</artifactId>
+                <version>1.4.9</version>
             </plugin>
 
         </plugins>
@@ -261,9 +243,15 @@
     <dependencies>
         <!-- Testing -->
         <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.5.0</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-engine</artifactId>
+            <version>5.5.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -272,7 +260,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.6.2</version>
+            <version>3.12.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -280,7 +268,7 @@
         <dependency>
             <groupId>ch.qos.logback</groupId>
             <artifactId>logback-classic</artifactId>
-            <version>1.1.9</version>
+            <version>1.2.3</version>
         </dependency>
     </dependencies>
 
@@ -291,7 +279,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-project-info-reports-plugin</artifactId>
-                <version>2.8.1</version>
+                <version>3.0.0</version>
             </plugin>
 
             <!-- Dependency version reporting. Relies on standard version numbering
@@ -300,7 +288,7 @@
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>versions-maven-plugin</artifactId>
-                <version>2.3</version>
+                <version>2.7</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -325,7 +313,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-changes-plugin</artifactId>
-                <version>2.11</version>
+                <version>2.12.1</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -339,9 +327,10 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>2.10.4</version>
+                <version>3.1.0</version>
                 <configuration>
                     <linksource>true</linksource>
+                    <source>8</source>
                 </configuration>
             </plugin>
 
@@ -349,7 +338,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-jxr-plugin</artifactId>
-                <version>2.3</version>
+                <version>3.0.0</version>
             </plugin>
 
             <!-- Generates a list of the code marked "todo", for example //TODO. Will
@@ -360,11 +349,12 @@
                 <version>2.4</version>
             </plugin>
 
-            <!--FindBugs code coverage tool-->
+            <!--SpotBugs code coverage tool-->
+            <!-- SpotBugs replaced FindBugs -->
             <plugin>
-                <groupId>org.codehaus.mojo</groupId>
-                <artifactId>findbugs-maven-plugin</artifactId>
-                <version>3.0.0</version>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>3.1.12</version>
             </plugin>
 
             <plugin>
@@ -382,9 +372,9 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.7</version>
+                <version>3.12.0</version>
                 <configuration>
-                    <targetJdk>1.7</targetJdk>
+                    <!--<targetJdk>1.7</targetJdk>-->
                     <skipEmptyReport>false</skipEmptyReport>
                 </configuration>
             </plugin>
@@ -392,7 +382,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>2.19.1</version>
+                <version>3.0.0-M3</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -405,7 +395,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-checkstyle-plugin</artifactId>
-                <version>2.17</version>
+                <version>3.1.0</version>
                 <reportSets>
                     <reportSet>
                         <reports>
@@ -422,11 +412,11 @@
              words, to see this report, you will need to run mvn clean verify site - just running mvn clean site
              will NOT generate this data. -->
 
-            <plugin>
-                <groupId>org.jacoco</groupId>
-                <artifactId>jacoco-maven-plugin</artifactId>
-                <version>${jacoco.version}</version>
-            </plugin>
+            <!--<plugin>-->
+            <!--<groupId>org.jacoco</groupId>-->
+            <!--<artifactId>jacoco-maven-plugin</artifactId>-->
+            <!--<version>${jacoco.version}</version>-->
+            <!--</plugin>-->
         </plugins>
     </reporting>
 </project>
