@@ -24,12 +24,6 @@
         <url>scm:git:https://github.com/wiverson/maven-site-docs-example.git</url>
     </scm>
 
-    <!-- Used to define a minimum Maven version. Used in conjunction with plugin
-        management to lock in a more current version of the various plugins. -->
-    <prerequisites>
-        <maven>3.6.1</maven>
-    </prerequisites>
-
     <!-- Generates the license info for the site report. -->
     <licenses>
         <license>
@@ -45,7 +39,7 @@
             should probably be UTF-8 nowadays. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Added to show how the dependency/property report will look at properties -->
-        <javaLanguage.version>1.12</javaLanguage.version>
+        <javaLanguage.version>1.11</javaLanguage.version>
     </properties>
 
     <!-- These section is used by the maven-changes-plugin as well as to generate
@@ -86,7 +80,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-site-plugin</artifactId>
-                    <version>3.7.1</version>
+                    <version>3.9.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -96,7 +90,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
-                    <version>3.1.2</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -106,22 +100,22 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-assembly-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.3.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
-                    <version>2.5.3</version>
+                    <version>3.0.0-M1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-project-info-reports-plugin</artifactId>
-                    <version>3.0.0</version>
+                    <version>3.1.1</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-dependency-plugin</artifactId>
-                    <version>3.1.1</version>
+                    <version>3.1.2</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -131,7 +125,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-resources-plugin</artifactId>
-                    <version>3.1.0</version>
+                    <version>3.2.0</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -152,7 +146,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>12</release>
+                    <release>11</release>
                 </configuration>
             </plugin>
 
@@ -202,41 +196,41 @@
             <!-- It may be strange to configure this plugin in build, but that's where
                 the dependency config goes. This configuration adds markdown support to the
                 report generation. -->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-site-plugin</artifactId>
-                <version>3.7.1</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>org.apache.maven.doxia</groupId>
-                        <artifactId>doxia-module-markdown</artifactId>
-                        <version>1.8</version>
-                    </dependency>
-                    <dependency>
-                        <groupId>org.apache.maven.doxia</groupId>
-                        <artifactId>doxia-core</artifactId>
-                        <version>1.8</version>
-                    </dependency>
-                </dependencies>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-site-plugin</artifactId>-->
+<!--&lt;!&ndash;                <version>3.7.1</version>&ndash;&gt;-->
+<!--                <dependencies>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.apache.maven.doxia</groupId>-->
+<!--                        <artifactId>doxia-module-markdown</artifactId>-->
+<!--                        <version>1.8</version>-->
+<!--                    </dependency>-->
+<!--                    <dependency>-->
+<!--                        <groupId>org.apache.maven.doxia</groupId>-->
+<!--                        <artifactId>doxia-core</artifactId>-->
+<!--                        <version>1.8</version>-->
+<!--                    </dependency>-->
+<!--                </dependencies>-->
+<!--            </plugin>-->
 
-            <plugin>
-                <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.2</version>
-            </plugin>
+<!--            <plugin>-->
+<!--                <artifactId>maven-failsafe-plugin</artifactId>-->
+<!--&lt;!&ndash;                <version>3.0.0-M5</version>&ndash;&gt;-->
+<!--            </plugin>-->
 
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.7</version>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.apache.maven.plugins</groupId>-->
+<!--                <artifactId>maven-pmd-plugin</artifactId>-->
+<!--&lt;!&ndash;                <version>3.13.0</version>&ndash;&gt;-->
+<!--            </plugin>-->
 
             <!-- Configure mutation testing. -->
-            <plugin>
-                <groupId>org.pitest</groupId>
-                <artifactId>pitest</artifactId>
-                <version>1.4.9</version>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>org.pitest</groupId>-->
+<!--                <artifactId>pitest</artifactId>-->
+<!--                <version>1.4.9</version>-->
+<!--            </plugin>-->
 
         </plugins>
     </build>
@@ -246,13 +240,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.5.0</version>
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.5.0</version>
+            <version>5.7.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -261,7 +255,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.12.0</version>
+            <version>3.17.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -331,7 +325,7 @@
                 <version>3.1.0</version>
                 <configuration>
                     <linksource>true</linksource>
-                    <source>12</source>
+                    <source>11</source>
                 </configuration>
             </plugin>
 
@@ -352,11 +346,11 @@
 
             <!--SpotBugs code coverage tool-->
             <!-- SpotBugs replaced FindBugs -->
-            <plugin>
-                <groupId>com.github.spotbugs</groupId>
-                <artifactId>spotbugs-maven-plugin</artifactId>
-                <version>3.1.12</version>
-            </plugin>
+<!--            <plugin>-->
+<!--                <groupId>com.github.spotbugs</groupId>-->
+<!--                <artifactId>spotbugs-maven-plugin</artifactId>-->
+<!--                <version>3.1.12</version>-->
+<!--            </plugin>-->
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -383,7 +377,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-report-plugin</artifactId>
-                <version>3.0.0-M3</version>
+                <version>3.0.0-M5</version>
                 <reportSets>
                     <reportSet>
                         <reports>
