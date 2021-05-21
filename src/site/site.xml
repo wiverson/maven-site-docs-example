@@ -4,7 +4,7 @@
 	<skin>
 		<groupId>org.apache.maven.skins</groupId>
 		<artifactId>maven-fluido-skin</artifactId>
-		<version>1.5</version>
+		<version>1.9</version>
 	</skin>
 	<!-- http://maven.apache.org/skins/maven-fluido-skin/ -->
 	<custom>
@@ -16,9 +16,6 @@
 	<body>
 		<menu ref="reports" inherit="top" />
 		<menu ref="modules" />
-        <menu name="Mutation Testing">
-            <item href="mutation-testing/index.html" name="Mutation Testing" />
-        </menu>
 		<menu name="Sample Markdown">
 			<item href="overview.html" name="Overview" />
 		</menu>
