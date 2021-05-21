@@ -12,7 +12,7 @@
     <description>Demonstrates the use of various Maven site documentation systems.</description>
 
     <!-- Required by the site command for certain relative URL configuration. -->
-    <url>http://www.wiverson.com/</url>
+    <url>https://www.devhow.com/</url>
 
     <!-- Used by the javadoc plugin to generate the comments at the bottom. -->
     <inceptionYear>2013</inceptionYear>
@@ -28,18 +28,14 @@
     <licenses>
         <license>
             <name>The Apache Software License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <url>https://www.apache.org/licenses/LICENSE-2.0.txt</url>
             <distribution>repo</distribution>
             <comments>A business-friendly OSS license</comments>
         </license>
     </licenses>
 
     <properties>
-        <!-- Eliminates the file encoding warning. Of course, all of your files
-            should probably be UTF-8 nowadays. -->
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <!-- Added to show how the dependency/property report will look at properties -->
-        <javaLanguage.version>1.11</javaLanguage.version>
     </properties>
 
     <!-- These section is used by the maven-changes-plugin as well as to generate
@@ -52,7 +48,7 @@
 
     <organization>
         <name>Will Iverson</name>
-        <url>http://www.wiverson.com/</url>
+        <url>https://www.devhow.com/</url>
     </organization>
 
     <!-- These are used in conjunction with the SCM configuration for the change
@@ -85,7 +81,7 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-surefire-plugin</artifactId>
-                    <version>3.0.0-M3</version>
+                    <version>3.0.0-M5</version>
                 </plugin>
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
@@ -146,91 +142,51 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>11</release>
+                    <release>16</release>
                 </configuration>
             </plugin>
 
-            <!--<plugin>-->
-            <!--<groupId>org.jacoco</groupId>-->
-            <!--<artifactId>jacoco-maven-plugin</artifactId>-->
-            <!--&lt;!&ndash; As of 8/5/2015 updating to 0.7.5.x broke the build &ndash;&gt;-->
-            <!--<version>${jacoco.version}</version>-->
+            <plugin>
+                <!-- https://mvnrepository.com/artifact/org.jacoco/jacoco-maven-plugin -->
 
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<id>prepare-agent</id>-->
-            <!--<goals>-->
-            <!--<goal>prepare-agent</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--<execution>-->
-            <!--<id>report</id>-->
-            <!--<phase>prepare-package</phase>-->
-            <!--<goals>-->
-            <!--<goal>report</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--<execution>-->
-            <!--<id>check</id>-->
-            <!--<goals>-->
-            <!--<goal>check</goal>-->
-            <!--</goals>-->
-            <!--<configuration>-->
-            <!--<rules>-->
-            <!--<rule>-->
-            <!--<element>BUNDLE</element>-->
-            <!--<limits>-->
-            <!--<limit>-->
-            <!--<counter>COMPLEXITY</counter>-->
-            <!--<value>COVEREDRATIO</value>-->
-            <!--<minimum>0.60</minimum>-->
-            <!--</limit>-->
-            <!--</limits>-->
-            <!--</rule>-->
-            <!--</rules>-->
-            <!--</configuration>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
-
-            <!-- It may be strange to configure this plugin in build, but that's where
-                the dependency config goes. This configuration adds markdown support to the
-                report generation. -->
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-site-plugin</artifactId>-->
-<!--&lt;!&ndash;                <version>3.7.1</version>&ndash;&gt;-->
-<!--                <dependencies>-->
-<!--                    <dependency>-->
-<!--                        <groupId>org.apache.maven.doxia</groupId>-->
-<!--                        <artifactId>doxia-module-markdown</artifactId>-->
-<!--                        <version>1.8</version>-->
-<!--                    </dependency>-->
-<!--                    <dependency>-->
-<!--                        <groupId>org.apache.maven.doxia</groupId>-->
-<!--                        <artifactId>doxia-core</artifactId>-->
-<!--                        <version>1.8</version>-->
-<!--                    </dependency>-->
-<!--                </dependencies>-->
-<!--            </plugin>-->
-
-<!--            <plugin>-->
-<!--                <artifactId>maven-failsafe-plugin</artifactId>-->
-<!--&lt;!&ndash;                <version>3.0.0-M5</version>&ndash;&gt;-->
-<!--            </plugin>-->
-
-<!--            <plugin>-->
-<!--                <groupId>org.apache.maven.plugins</groupId>-->
-<!--                <artifactId>maven-pmd-plugin</artifactId>-->
-<!--&lt;!&ndash;                <version>3.13.0</version>&ndash;&gt;-->
-<!--            </plugin>-->
-
-            <!-- Configure mutation testing. -->
-<!--            <plugin>-->
-<!--                <groupId>org.pitest</groupId>-->
-<!--                <artifactId>pitest</artifactId>-->
-<!--                <version>1.4.9</version>-->
-<!--            </plugin>-->
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <version>0.8.7</version>
+                <executions>
+                    <execution>
+                        <id>default-prepare-agent</id>
+                        <goals>
+                            <goal>prepare-agent</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-report</id>
+                        <goals>
+                            <goal>report</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>default-check</id>
+                        <goals>
+                            <goal>check</goal>
+                        </goals>
+                        <configuration>
+                            <rules>
+                                <rule>
+                                    <element>BUNDLE</element>
+                                    <limits>
+                                        <limit>
+                                            <counter>COMPLEXITY</counter>
+                                            <value>COVEREDRATIO</value>
+                                            <minimum>0.60</minimum>
+                                        </limit>
+                                    </limits>
+                                </rule>
+                            </rules>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
 
         </plugins>
     </build>
@@ -240,13 +196,13 @@
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>5.7.0</version>
+            <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-engine</artifactId>
-            <version>5.7.0</version>
+            <version>5.7.2</version>
             <scope>test</scope>
         </dependency>
 
@@ -255,7 +211,7 @@
         <dependency>
             <groupId>org.assertj</groupId>
             <artifactId>assertj-core</artifactId>
-            <version>3.17.2</version>
+            <version>3.19.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -346,11 +302,11 @@
 
             <!--SpotBugs code coverage tool-->
             <!-- SpotBugs replaced FindBugs -->
-<!--            <plugin>-->
-<!--                <groupId>com.github.spotbugs</groupId>-->
-<!--                <artifactId>spotbugs-maven-plugin</artifactId>-->
-<!--                <version>3.1.12</version>-->
-<!--            </plugin>-->
+            <!--            <plugin>-->
+            <!--                <groupId>com.github.spotbugs</groupId>-->
+            <!--                <artifactId>spotbugs-maven-plugin</artifactId>-->
+            <!--                <version>3.1.12</version>-->
+            <!--            </plugin>-->
 
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
@@ -367,7 +323,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
-                <version>3.12.0</version>
+                <version>3.14.0</version>
                 <configuration>
                     <!--<targetJdk>1.7</targetJdk>-->
                     <skipEmptyReport>false</skipEmptyReport>
@@ -400,18 +356,24 @@
                 </reportSets>
             </plugin>
 
-            <!-- To make JaCoCo work, you need this entry to generate the report (as part of site
-            generation) as well as in the default lifecycle (under build, above).
+            <plugin>
+                <groupId>org.jacoco</groupId>
+                <artifactId>jacoco-maven-plugin</artifactId>
+                <reportSets>
+                    <reportSet>
+                        <reports>
+                            <!-- select non-aggregate reports -->
+                            <report>report</report>
+                        </reports>
+                    </reportSet>
+                </reportSets>
+            </plugin>
 
-             JaCoCo instrumentation data is ONLY generated by running through the default lifecycle.  In other
-             words, to see this report, you will need to run mvn clean verify site - just running mvn clean site
-             will NOT generate this data. -->
-
-            <!--<plugin>-->
-            <!--<groupId>org.jacoco</groupId>-->
-            <!--<artifactId>jacoco-maven-plugin</artifactId>-->
-            <!--<version>${jacoco.version}</version>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>com.github.spotbugs</groupId>
+                <artifactId>spotbugs-maven-plugin</artifactId>
+                <version>4.2.0</version>
+            </plugin>
         </plugins>
     </reporting>
 </project>
