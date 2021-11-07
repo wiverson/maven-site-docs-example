@@ -3,24 +3,27 @@
 This is a Java project showing how to set up Apache Maven to generate a wide array of useful reports. You can see
 the generated reports for [this project here](https://wiverson.github.io/maven-site-docs-example/).
 
-Without a doubt, the most helpful reports for me include
+Some reports I use on every project include
 the [code coverage report](https://wiverson.github.io/maven-site-docs-example/jacoco/index.html) and
 the [automatic dependency checker](https://wiverson.github.io/maven-site-docs-example/dependency-updates-report.html) -
 it's very nice to see what dependencies are out of date!
 
-As of this writing the reports include:
+Included reports:
 
-- Dependency & plugin update checks (via )
-- Change log
-- File activity
-- Developer activity
-- javadoc (main and test)
-- Clickable HTML version of source (main and test)
-- Tag list (find all the TODOs in comments)
-- JDepend, JavaNCSS reports (complexity analysis)
-- Copy-paste detector
-- PMD, CheckStyle, and SpotBugs to help you find errors
-- JaCoCo for code coverage
+- Dependencies. Find out if any of your code or plugin dependencies are out of date.
+- Change log & SCM change info. Pull GitHub info and show what's changed.
+- Issues. Show open issues in GitHub.
+- Source x-ref. Clickable version of source code (prod & test).
+- Tag list. Find all of TODOs in your code.
+- JDepend. Various quality metrics.
+- JavaNCSS. Various code metrics for complexity, etc.
+- CPD. Find copy/pasted code in the repo.
+- PMD. Finds bugs & bad code.
+- Surefire. Test report, including execution times.
+- Checkstyle. Check for coding style issues.
+- JaCoCo. Code coverage reporting - how much code are your tests actually hitting?
+- SpotBugs. Static code analysis to find bugs.
+
 
 This [project includes a GitHub Action](https://github.com/wiverson/maven-site-docs-example/blob/main/.github/workflows/maven-package.yml)
 which automatically publishes the [generated documentation](https://wiverson.github.io/maven-site-docs-example/) to
@@ -50,26 +53,19 @@ requires the test suite to run (part of verify).
 - [Maven 3.8.3+](http://maven.apache.org/)
 - As configured, targets Java 17.
 
-## Features
-
-Illustrates an example of how to configure following reports:
-
-- Dependencies. Find out if any of your code or plugin dependencies are out of date.
-- Change log & SCM change info. Pull GitHub info and show what's changed.
-- Issues. Show open issues in GitHub.
-- Source x-ref. Clickable version of source code (prod & test).
-- Tag list. Find all of TODOs in your code.
-- JDepend. Various quality metrics.
-- JavaNCSS. Various code metrics for complexity, etc.
-- CPD. Find copy/pasted code in the repo.
-- PMD. Finds bugs & bad code.
-- Surefire. Test report, including execution times.
-- Checkstyle. Check for coding style issues.
-- JaCoCo. Code coverage reporting - how much code are your tests actually hitting?
-- SpotBugs. Static code analysis to find bugs.
-
 ## Further Reading
 
 You may find [SchemaSpy](http://schemaspy.org) to be helpful if you work with RDMBS packages such as MySQL, PostgreSQL,
 etc. SchemaSpy can be set up to generate great looking visual, clickable HTML reports documenting a schema directly from
 an RDBMS. Very helpful to ensure that your schema documentation is current at all times.
+
+## Tip
+
+This error on macOS?
+
+``
+[ERROR] xcrun: error: invalid active developer path (/Library/Developer/CommandLineTools), 
+missing xcrun at: /Library/Developer/CommandLineTools/usr/bin/xcrun
+``
+
+Install/update XCode.
