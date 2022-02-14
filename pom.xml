@@ -142,7 +142,7 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>3.8.1</version>
                 <configuration>
-                    <release>16</release>
+                    <release>17</release>
                 </configuration>
             </plugin>
 
@@ -299,27 +299,16 @@
                 <artifactId>taglist-maven-plugin</artifactId>
                 <version>2.4</version>
             </plugin>
-
-            <!--SpotBugs code coverage tool-->
-            <!-- SpotBugs replaced FindBugs -->
-            <!--            <plugin>-->
-            <!--                <groupId>com.github.spotbugs</groupId>-->
-            <!--                <artifactId>spotbugs-maven-plugin</artifactId>-->
-            <!--                <version>3.1.12</version>-->
-            <!--            </plugin>-->
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>jdepend-maven-plugin</artifactId>
                 <version>2.0</version>
             </plugin>
-
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>javancss-maven-plugin</artifactId>
                 <version>2.1</version>
             </plugin>
-
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-pmd-plugin</artifactId>
